@@ -10,7 +10,7 @@ var GLOBAL = {
         libs: './libs/',
         themeforest: './themeforest/'
     },
-    themeName: 'theme'
+    themeName: '<%= themeName %>'
 };
 
 var gulp = require('gulp');

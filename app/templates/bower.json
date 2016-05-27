@@ -1,7 +1,6 @@
 {
-  "name": "pimmey-starter",
+  "name": "<%= themeName %>",
   "description": "Themeforest theme",
-  "main": "index.js",
   "authors": [
     "Yegor Borisenco <pimmey@pimmey.com>"
   ],
@@ -19,10 +18,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "Materialize": "materialize#^0.97.5",
-    "owl.carousel": "^2.0.0-beta.3",
-    "ajaxchimp": "^1.3.0"
-  }
+  ]
 }
