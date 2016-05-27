@@ -1,0 +1,14 @@
+scss_files: "**/*.scss"
+
+linters:
+  Indentation:
+    width: 4
+
+  PropertySortOrder:
+    order: recess
+
+  NestingDepth:
+    enabled: false
+
+  Comment:
+    enabled: false

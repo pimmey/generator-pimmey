@@ -1,0 +1,21 @@
+{
+  "name": "generator-pimmey",
+  "version": "1.0.0",
+  "description": "Themeforest generator yeoman-generator",
+  "files": [
+    "app"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "Yegor Borisenco <pimmey@pimmey.com>",
+  "license": "ISC",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "yeoman-generator": "^0.23.3"
+  }
+}
