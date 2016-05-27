@@ -3,23 +3,20 @@
 var generators = require('yeoman-generator');
 var yosay = require('yosay');
 var mkdir = require('mkdirp');
-var fs = require('fs');
 
 module.exports = generators.Base.extend({
-    welcome: function welcome () {
-        this.log(yosay('Lets fucking do this.'));
-    },
-
     prompting: function prompting () {
+        this.log(yosay('Lets fucking do this.'));
+
         return this.prompt([{
             type: 'input',
             name: 'themeName',
-            message: 'Input theme name',
+            message: 'How should we call this theme?',
             default: this.appname
         }, {
             type: 'confirm',
             name: 'installDependenciesPrompt',
-            message: 'Would you like to run npm and bower install?'
+            message: 'Would you like to run npm, bower and composer install?'
         }]).then(function (answer) {
             this.themeName = answer.themeName;
             this.installDependenciesPrompt = answer.installDependenciesPrompt;
@@ -35,54 +32,56 @@ module.exports = generators.Base.extend({
         mkdir('assets/images');
         mkdir('assets/js');
         mkdir('favicons');
-        mkdir('gulp');
-        mkdir('mailer');
         mkdir('src');
-        mkdir('src/jade');
         mkdir('src/sass');
         mkdir('src/sass/components');
 
-        this.template('package.json', 'package.json');
-        this.template('bower.json', 'bower.json');
-        this.template('gulpfile.js', 'gulpfile.js');
+        this.template('package.json');
+        this.template('bower.json');
+        this.template('composer.json');
+        this.template('gulpfile.js');
 
         this.copy('src/sass/theme.scss', 'src/sass/' + this.themeName + '.scss');
-        this.copy('src/jade/base.jade', 'src/jade/base.jade');
-        this.copy('src/jade/skin-1.jade', 'src/jade/skin-1.jade');
+
+        this.directory('src/jade');
+        this.directory('gulp');
+        this.directory('mailer');
 
         this.copy('eslintrc', '.eslintrc');
         this.copy('scss-lint.yml', '.scss-lint.yml');
+        this.copy('gitignore', '.gitignore');
+        this.copy('LICENSE', 'LICENSE');
     },
 
-    installDependencies: function installDependencies () {
+    install: function install () {
         if (this.installDependenciesPrompt) {
             this.npmInstall([
                 'bourbon',
-                /*'css-mqpacker',
-                 'cssnano',
-                 'gulp',
-                 'gulp-concat',
-                 'gulp-cssnano',
-                 'gulp-imagemin',
-                 'gulp-jade',
-                 'gulp-jsbeautifier',
-                 'gulp-postcss',
-                 'gulp-rename',
-                 'gulp-replace',
-                 'gulp-sass',
-                 'gulp-sourcemaps',
-                 'gulp-uglify',
-                 'gulp-zip',
-                 'imagemin-pngquant'*/
+                'css-mqpacker',
+                'cssnano',
+                'gulp',
+                'gulp-concat',
+                'gulp-cssnano',
+                'gulp-imagemin',
+                'gulp-jade',
+                'gulp-jsbeautifier',
+                'gulp-postcss',
+                'gulp-rename',
+                'gulp-replace',
+                'gulp-sass',
+                'gulp-sourcemaps',
+                'gulp-uglify',
+                'gulp-zip',
+                'imagemin-pngquant'
             ], {'saveDev': true});
 
             this.bowerInstall([
                 'materialize',
-                /*'owl.carousel',
-                 'ajaxchimp'*/
+                'owl.carousel',
+                'ajaxchimp'
             ], {'save': true});
-        } else {
-            this.log('Don\'t forget to run npm & bower install');
+
+            this.spawnCommand('composer', ['install']);
         }
     }
 });

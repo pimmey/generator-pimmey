@@ -1,7 +1,7 @@
 {
   "name": "generator-pimmey",
   "version": "1.0.0",
-  "description": "Themeforest generator yeoman-generator",
+  "description": "Themeforest generator by pimmey",
   "files": [
     "app"
   ],

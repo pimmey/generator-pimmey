@@ -1,0 +1,9 @@
+node_modules
+bower_components
+.idea
+**/.DS_Store
+*~
+composer.phar
+themeforest/build
+themeforest/preview.jpg.zip
+themeforest/react.build.*.zip
