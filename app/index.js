@@ -78,7 +78,7 @@ module.exports = generators.Base.extend({
             this.bowerInstall([
                 'materialize',
                 'owl.carousel',
-                'ajaxchimp'
+                'ajax-navi'
             ], {'save': true});
 
             this.spawnCommand('composer', ['install']);
