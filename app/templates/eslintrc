@@ -32,9 +32,7 @@
     "$": true,
     "google": true,
     "CONFIG": true,
-    "Materialize": true,
-    "THREE": true,
-    "SineWaves": true
+    "Materialize": true
   },
   "extends": "eslint:recommended"
 }

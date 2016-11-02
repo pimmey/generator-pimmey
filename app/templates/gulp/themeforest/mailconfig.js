@@ -11,6 +11,6 @@
                 .pipe(replace(/('username' => )'(.+)'/, '$1\'user@gmail.com\''))
                 .pipe(replace(/('password' => )'(.+)'/, '$1\'password12345\''))
                 .pipe(gulp.dest(GLOBAL.dirs.themeforest + 'build/mailer'));
-        }
-    }
+        };
+    };
 })();

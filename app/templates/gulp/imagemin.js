@@ -13,6 +13,6 @@
                     use: [pngquant()]
                 }))
                 .pipe(gulp.dest(GLOBAL.dirs.assets + 'images'));
-        }
-    }
+        };
+    };
 })();

@@ -7,12 +7,12 @@
         var sourcemaps = require('gulp-sourcemaps');
 
         return function () {
-            gulp.src(GLOBAL.dirs.sass + GLOBAL.themeName + '.scss')
+            gulp.src(GLOBAL.dirs.sass + '*.scss')
                 .pipe(sourcemaps.init())
                 .pipe(sass({outputStyle: 'expanded'})
                     .on('error', sass.logError))
                 .pipe(sourcemaps.write())
-                .pipe(gulp.dest(GLOBAL.dirs.css))
-        }
-    }
+                .pipe(gulp.dest(GLOBAL.dirs.css));
+        };
+    };
 })();

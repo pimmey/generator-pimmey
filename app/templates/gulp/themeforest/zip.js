@@ -11,6 +11,6 @@
                 .pipe(zip(GLOBAL.themeName + '.build.zip'))
                 .pipe(rename(GLOBAL.themeName + '.build.' + Date.now() + '.zip'))
                 .pipe(gulp.dest(GLOBAL.dirs.themeforest));
-        }
-    }
+        };
+    };
 })();

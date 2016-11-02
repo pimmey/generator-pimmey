@@ -3,25 +3,28 @@
 
     module.exports = function (GLOBAL, gulp) {
 
-        var jade = require('gulp-jade');
+        var pug = require('gulp-pug');
         var beautify = require('gulp-jsbeautifier');
 
         return function () {
-            gulp.src([GLOBAL.dirs.jade + '*.jade', '!' + GLOBAL.dirs.jade + 'base.jade'])
-                .pipe(jade())
+            gulp.src([
+                GLOBAL.dirs.jade + '*.pug',
+                GLOBAL.dirs.pug + '**/*.pug',
+                '!' + GLOBAL.dirs.pug + '**/_*.pug'
+            ])
+                .pipe(pug())
                 .pipe(beautify({
                     html: {
                         indent_char: ' ',
                         indent_size: 4,
-                        selector_separator_newline: true,
                         preserveNewlines: false,
                         indent_inner_html: true,
-                        unformatted: ['span'],
+                        unformatted: ['span', 'sup'],
                         extra_liners: ['section', 'footer'],
                         wrap_line_length: 0
                     }
                 }))
                 .pipe(gulp.dest('./'));
-        }
-    }
+        };
+    };
 })();

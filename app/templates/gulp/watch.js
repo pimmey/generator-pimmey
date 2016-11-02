@@ -5,12 +5,12 @@
         return function () {
             gulp.watch([
                 GLOBAL.dirs.sass + '*.scss',
-                GLOBAL.dirs.sass + 'skins/*.scss'
+                GLOBAL.dirs.sass + '**/*.scss'
             ], ['sass']);
             gulp.watch([
-                GLOBAL.dirs.jade + '*.jade',
-                GLOBAL.dirs.jade + '**/*.jade'
-            ], ['jade']);
-        }
-    }
+                GLOBAL.dirs.pug + '*.pug',
+                GLOBAL.dirs.pug + '**/*.pug'
+            ], ['pug']);
+        };
+    };
 })();
