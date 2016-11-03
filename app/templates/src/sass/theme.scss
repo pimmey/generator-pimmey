@@ -15,3 +15,9 @@ Author profile: https://themeforest.net/user/pimmey
 [Typography]
 # Check out http://materializecss.com/typography.html for more details
 */
+
+@import 'components/materialize-colors';
+@import 'components/variables';
+
+@import 'components/typography';
+@import 'components/global';

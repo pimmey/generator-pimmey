@@ -8,7 +8,7 @@ head
     meta(http-equiv='x-ua-compatible', content='ie=edge')
 
     // Meta description, aim for about 150 characters
-    meta(name='description', content='This theme is a very beautiful and minimalistic theme with a gorgeous animation that will make the user remember your website and want to come back.')
+    meta(name='description', content='<%= themeName.charAt(0).toUpperCase() + themeName.slice(1) %> is a very beautiful and minimalistic theme with a gorgeous animation that will make the user remember your website and want to come back.')
 
     // Stylesheets
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700')
@@ -28,4 +28,4 @@ head
 
     // Site title
     block title
-        title <%= themeName %>
+        title <%= themeName.charAt(0).toUpperCase() + themeName.slice(1) %>

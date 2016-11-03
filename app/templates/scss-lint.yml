@@ -12,3 +12,10 @@ linters:
 
   Comment:
     enabled: false
+
+  SelectorDepth:
+    enabled: true
+    max_depth: 5
+
+  ImportantRule:
+    enabled: false

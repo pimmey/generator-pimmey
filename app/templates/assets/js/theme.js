@@ -1,5 +1,5 @@
 /*!
- * <%= themeName %>
+ * <%= themeName.charAt(0).toUpperCase() + themeName.slice(1) %>
  * Project Website: http://<%= themeName %>.pimmey.com
  * @version 1.0
  * @author Yegor Borisenco <pimmey@pimmey.com>
@@ -152,5 +152,5 @@ App = {
 };
 
 $(document).on('ready', function () {
-
+    App.initSideNav();
 });

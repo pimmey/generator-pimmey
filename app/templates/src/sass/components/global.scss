@@ -1,0 +1,41 @@
+section {
+    padding: 5rem 0;
+}
+
+.section {
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1600px;
+
+    @media #{$medium-and-up} {
+        width: $container-width;
+    }
+
+    @media #{$large-and-up} {
+        width: $container-width;
+    }
+}
+
+iframe {
+    border: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+strong {
+    font-weight: 700;
+}
+
+address {
+    margin: 1em 0;
+    font-style: normal;
+}
+
+.responsive-img {
+    width: 100%;
+}

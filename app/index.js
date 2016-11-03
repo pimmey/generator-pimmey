@@ -20,8 +20,6 @@ module.exports = generators.Base.extend({
 
     writing: function writing () {
         mkdir('assets');
-        mkdir('assets/css');
-        mkdir('assets/fonts');
         mkdir('assets/images');
         mkdir('assets/js');
         mkdir('favicons');
@@ -29,20 +27,36 @@ module.exports = generators.Base.extend({
         mkdir('src/sass');
         mkdir('src/sass/components');
 
+        // Packages
         this.template('package.json');
         this.template('bower.json');
-        this.template('composer.json');
+
+        // Gulpfile
         this.template('gulpfile.js');
 
+        // JS
         this.copy('assets/js/config.js', 'assets/js/config.js');
         this.copy('assets/js/theme.js', 'assets/js/' + this.themeName + '.js');
+
+        // Sass
+        this.directory('src/sass/components');
         this.copy('src/sass/theme.scss', 'src/sass/' + this.themeName + '.scss');
 
+        // Pug
         this.directory('src/pug');
+
+        // Assets
+        this.directory('assets/fonts');
+        this.directory('assets/css');
+
+        // Docuemntation
         this.directory('src/documentation');
+
+        // Gulp dir and mailer
         this.directory('gulp');
         this.directory('mailer');
 
+        // Root files
         this.copy('eslintrc', '.eslintrc');
         this.copy('scss-lint.yml', '.scss-lint.yml');
         this.copy('gitignore', '.gitignore');

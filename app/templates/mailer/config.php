@@ -10,6 +10,3 @@ $SMTP = array(
     'port' => 465,
     'encryption' => 'ssl'
 );
-
-// Available colors: blue, green, grey, red and yellow
-$template_color = 'grey';

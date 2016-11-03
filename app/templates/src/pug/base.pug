@@ -1,24 +1,11 @@
 doctype html
-html
+html(lang='en')
 
-    head
-        meta(charset='utf-8')
-
-        // Making sure the web-site will scale fine on mobiles
-        meta(name='viewport', content='width=device-width, initial-scale=1.0')
-
-        // Trying to force IE to perform at its best
-        meta(http-equiv='x-ua-compatible', content='ie=edge')
-
-        // Meta description, aim for about 150 characters
-        meta(name='description', content='This theme is a very beautiful and minimalistic theme with a gorgeous animation that will make the user remember your website and want to come back.')
-
-
-        // Favicons go here
-
-        block title
-            title Base
+    include layout/_head.pug
 
     block vars
 
-    body(class='#{bodyClass}')
+    body(class=bodyClass)
+
+    include layout/_footer.pug
+    include layout/_scripts.pug

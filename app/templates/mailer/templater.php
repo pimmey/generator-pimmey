@@ -5,7 +5,7 @@ require 'config.php';
 function parseTemplate ($form_data) {
     global $template_color;
 
-    $template = file_get_contents('templates/template-' . $template_color .  '.html');
+    $template = file_get_contents('templates/template.html');
 
     if ($template)
     {
@@ -13,7 +13,7 @@ function parseTemplate ($form_data) {
 
         $template = str_replace('%MESSAGE%', $form_data['message'], $template);
         $template = str_replace('%NAME%', $form_data['name'], $template);
-        $template = str_replace('%CONTACT%', $form_data['contact'], $template);
+        $template = str_replace('%CONTACT%', $form_data['email'], $template);
         $template = str_replace('%SITE%', $site, $template);
 
         return $template;

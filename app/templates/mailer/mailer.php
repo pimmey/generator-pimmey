@@ -44,13 +44,13 @@ else
 
     $form_data = array(
         'name' => htmlspecialchars($_POST['name']),
-        'contact' => htmlspecialchars($_POST['contact']),
+        'email' => htmlspecialchars($_POST['email']),
         'message' => htmlspecialchars($_POST['message'])
     );
 
-    $mail->setFrom($form_data['contact'], $form_data['name']);
+    $mail->setFrom($form_data['email'], $form_data['name']);
 
-    $mail->Subject = 'New message via React form';
+    $mail->Subject = 'New message via web form';
 
     // Uses templater.php to do some magic
     $mail->Body = parseTemplate($form_data);
