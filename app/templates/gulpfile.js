@@ -22,7 +22,7 @@ gulp.task('watch', require(GLOBAL.dirs.gulp + 'watch')(GLOBAL, gulp));
 gulp.task('imagemin', require(GLOBAL.dirs.gulp + 'imagemin')(GLOBAL, gulp));
 
 gulp.task('themeforest', ['themeforest:build'], function () {
-    gulp.start(['themeforest:pixelate', 'themeforest:mailconfig']);
+    gulp.start(['themeforest:mailconfig']);
 });
 
 gulp.task('themeforest:build', require(GLOBAL.dirs.gulp + 'themeforest/build')(GLOBAL, gulp));
@@ -30,3 +30,7 @@ gulp.task('themeforest:pixelate', require(GLOBAL.dirs.gulp + 'themeforest/pixela
 gulp.task('themeforest:mailconfig', require(GLOBAL.dirs.gulp + 'themeforest/mailconfig')(GLOBAL, gulp));
 
 gulp.task('themeforest:zip', require(GLOBAL.dirs.gulp + 'themeforest/zip')(GLOBAL, gulp));
+
+gulp.task('default', ['sass', 'pug', 'watch']);
+
+gulp.task('docs', require(GLOBAL.dirs.gulp + 'docs')(GLOBAL, gulp));

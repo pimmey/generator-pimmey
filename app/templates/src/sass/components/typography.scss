@@ -7,20 +7,9 @@ input,
 textarea,
 select,
 button {
+    -moz-font-feature-settings: 'liga', 'kern';
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     font-kerning: normal;
-    -moz-font-feature-settings: 'liga', 'kern';
-}
-
-h1,
-h2,
-h3 {
-    font-family: 'Roboto Slab', serif;
-    letter-spacing: -1.45px;
-}
-
-h1 {
-    margin: 0 0 5rem;
 }
