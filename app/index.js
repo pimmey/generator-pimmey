@@ -38,6 +38,9 @@ module.exports = generators.Base.extend({
         this.copy('assets/js/config.js', 'assets/js/config.js');
         this.copy('assets/js/theme.js', 'assets/js/' + this.themeName + '.js');
 
+        // Libs
+        this.directory('libs');
+
         // Sass
         this.directory('src/sass/components');
         this.copy('src/sass/theme.scss', 'src/sass/' + this.themeName + '.scss');
