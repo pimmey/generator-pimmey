@@ -19,7 +19,8 @@ App = {
     * Global variables used throughout the app
     * */
     GLOBAL: {
-
+        activeToasts: 0,
+        progress: $('.pace')
     },
 
     /*

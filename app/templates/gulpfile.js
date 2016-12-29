@@ -5,6 +5,7 @@ var GLOBAL = {
         gulp: './gulp/',
         sass: './src/sass/',
         pug: './src/pug/',
+        docs: './src/documentation/',
         assets: './assets/',
         css: './assets/css/',
         libs: './libs/',
@@ -16,7 +17,7 @@ var GLOBAL = {
 var gulp = require('gulp');
 
 gulp.task('sass', require(GLOBAL.dirs.gulp + 'sass')(GLOBAL, gulp));
-gulp.task('build', require(GLOBAL.dirs.gulp + 'build')(GLOBAL, gulp));
+gulp.task('min:css', require(GLOBAL.dirs.gulp + 'build')(GLOBAL, gulp));
 gulp.task('pug', require(GLOBAL.dirs.gulp + 'pug')(GLOBAL, gulp));
 gulp.task('watch', require(GLOBAL.dirs.gulp + 'watch')(GLOBAL, gulp));
 gulp.task('imagemin', require(GLOBAL.dirs.gulp + 'imagemin')(GLOBAL, gulp));
